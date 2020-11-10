@@ -1,10 +1,10 @@
 import React from 'react';
-import classes from './Header.module.css';
+import newStyles from './Header.module.css';
 
 const Header = () => {
     return (
-      <header className={classes.header}>
-      <img src='https://diskomir.ru/upload/resize_cache/webp/iblock/792/792542b2dbd1e1b41f6f32b9f3ad85a6.webp'></img>
+      <header className={newStyles.header}>
+      <img src='https://hyperpix.net/wp-content/uploads/2019/08/cyberpunk-2077-logo-font-download.jpg'></img>
       </header>
       );
 }
