@@ -1,3 +1,14 @@
+import profileReducer from "./profile-reducer";
+import dialogsReducer from "./dialogs-reducer";
+import sidebarReducer from "./sidebar-reducer";
+
+const ADD_POST = 'ADD-POST';
+const UPDATE_NEW_POST_TEXT = 'UPDATE_NEW_POST_TEXT';
+
+const UPDATE_NEW_MESSAGE_BODY = 'UPDATE_NEW_MESSAGE_BODY';
+const SEND_MESSAGE = 'SEND_MESSAGE';
+
+
 let store = {
     _state: {
         profilePage: {
@@ -26,6 +37,7 @@ let store = {
                 {id: 5, name: "Ruslan"},
                 {id: 6, name: "Friend"}
             ],
+            newMessageBody: ""
         },
         sidebar: {}
     },
@@ -40,21 +52,19 @@ let store = {
         this._callSubscriber = observer;
     },
     dispatch(action) {
-  if (action.type === 'ADD-POST')  {
-      let newPost = {
-          id: 5,
-          message: this._state.profilePage.newPostText,
-          likesCount: 0
-      };
-      this._state.profilePage.posts.push(newPost);
-      this._state.profilePage.newPostText = '';
+
+        this._state.profilePage = profileReducer(this._state.profilePage, action);
+        this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
+        this._state.sidebar = sidebarReducer(this._state.sidebar, action);
+
       this._callSubscriber(this._state);
-  } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
-      this._state.profilePage.newPostText = action.newText;
-      this._callSubscriber(this._state);
-  }
+
     }
 }
+
+
+
+
 
 export default store;
 window.store = store;   //store это ООП

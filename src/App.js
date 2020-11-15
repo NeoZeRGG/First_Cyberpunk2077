@@ -20,7 +20,8 @@ const App = (props) => {
         {/*<Route path="/profile" component={Profile}/>*/}
 
         <Route path="/dialogs" render={ () =>
-            <Dialogs state={props.state.dialogsPage}/>}/>
+            <Dialogs store={props.store}
+                state={props.state.dialogsPage}/>}/>
         <Route path="/profile" render={ () =>
             <Profile
              profilePage={props.state.profilePage}
