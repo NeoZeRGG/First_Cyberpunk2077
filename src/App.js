@@ -6,6 +6,7 @@ import Profile from './components/Profile/Profile';
 import Dialogs from "./components/Dialogs/Dialogs";
 import {BrowserRouter} from "react-router-dom";
 import Route from "react-router-dom/es/Route";
+import DialogsContainer from "./components/Dialogs/DialogsContainer";
 
 
 
@@ -20,12 +21,11 @@ const App = (props) => {
         {/*<Route path="/profile" component={Profile}/>*/}
 
         <Route path="/dialogs" render={ () =>
-            <Dialogs store={props.store}
+            <DialogsContainer store={props.store}
                 state={props.state.dialogsPage}/>}/>
         <Route path="/profile" render={ () =>
             <Profile
-             profilePage={props.state.profilePage}
-             dispatch={props.dispatch} />}/>
+             store={props.store} />}/>
 
         {/*<Route path="/news" render={ () => <News/>/>*/}
         {/*<Route path="/music" render={ () => <Music/>/>*/}

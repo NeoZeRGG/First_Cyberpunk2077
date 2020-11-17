@@ -1,5 +1,5 @@
 import React from 'react';
-import store from "./State/state";
+import store from "./State/store";
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
@@ -10,7 +10,9 @@ import {BrowserRouter} from "react-router-dom";
  let rerenderEntireTree = (state) => {
     ReactDOM.render(
         <BrowserRouter>
-            <App state={store.getState()} dispatch={store.dispatch.bind(store)} store={store}/>
+            <App state={store.getState()}
+                 dispatch={store.dispatch.bind(store)}
+                 store={store}/>
         </BrowserRouter>,
         document.getElementById('root')
     );

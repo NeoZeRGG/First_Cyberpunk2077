@@ -1,7 +1,6 @@
 import React from 'react';
 import newStyles from './MyPosts.module.css';
 import Post from './Post/Post'
-import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../State/profile-reducer";
 
 
 
@@ -10,14 +9,13 @@ const MyPosts = (props) => {
 
   let newPostElement = React.createRef();
 
-  let addPost = () => {
-    props.dispatch(addPostActionCreator());
+  let onAddPost = () => {
+    props.addPost();
   }
 
   let onPostChange = () => {
     let text = newPostElement.current.value;
-    let action = updateNewPostTextActionCreator(text);
-    props.dispatch(action);
+    props.updateNewPostText(text);
   }
 
 
@@ -29,7 +27,7 @@ const MyPosts = (props) => {
     <div>
       <textarea onChange={onPostChange} ref={newPostElement} />
       <div>
-      <button onClick={ addPost }>Add posts</button>
+      <button onClick={ onAddPost }>Add posts</button>
       </div>
       <button>Remove</button>
     </div>
