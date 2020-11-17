@@ -34,9 +34,13 @@ const Dialogs = (props) => {
         <div className={newStyles.messages}>
             <div>{messagesElements}</div>
             <div>
-                <div><textarea value={newMessageBody}
+                <div>
+                    <textarea value={newMessageBody}
                                onChange={onNewMessageChange}
-                               placeholder='Enter your message'></textarea></div>
+                               placeholder='Enter your message'>
+
+                    </textarea>
+                </div>
                 <div><button onClick={onSendMessageClick}>Send</button></div>
             </div>
         </div>
