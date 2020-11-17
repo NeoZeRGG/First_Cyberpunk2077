@@ -11,7 +11,7 @@ let reducers = combineReducers({
 });
 
 
-
+// window.store = store;
 
 let store = createStore(reducers);
 
