@@ -1,32 +1,66 @@
-import React from 'react'
-import './App.css'
-import Header from './components/Header/Header';
-import Navbar from './components/Navbar/Navbar';
-import Profile from './components/Profile/Profile';
-import Route from "react-router-dom/es/Route";
-import DialogsContainer from "./components/Dialogs/DialogsContainer";
-import Users from "./components/Users/Users";
+import React, {Component} from 'react'
+import Header from './components/Header'
+import People from './components/People'
+import Planets from './components/Planets';
+import Starships from './components/Starships';
+import Child from './components/People'
+import {BrowserRouter, Route, Switch} from "react-router-dom"
 
 
-const App = () => {
-    return (
-        <div className='app-wrapper'>
-            <Header/>
-            <Navbar/>
-            <div className='app-wrapper-content'>
-                <Route path="/dialogs"
-                       render={ () => <DialogsContainer/> }/>
-
-                <Route path="/profile"
-                       render={ () => <Profile/> }/>
-
-                <Route path="/users"
-                       render={ () => <Users /> } />
-
-            </div>
-        </div>
-    );
+class App extends Component {
+    constructor(){
+        super();
+        this.state = {
+            people: [],
+            planets: [],
+            starships: []
+    }
+    
 }
+
+    componentDidMount(){
+        fetch("https://swapi.dev/api/people")
+        .then(response => response.json())
+        .then((data1) => {
+            this.setState({people: data1.results})
+        })
+
+        fetch("https://swapi.dev/api/planets")
+        .then(response => response.json())
+        .then((data2) => {
+            this.setState({planets: data2.results})
+        })
+
+        fetch("https://swapi.dev/api/starships")
+        .then(response => response.json())
+        .then((data3) => {
+            this.setState({starships: data3.results})
+        })
+    }
+
+    
+
+    render(){
+        return (
+            <BrowserRouter>
+            {console.log(this.state)}
+                <div>
+                    <Header />
+                    <Switch>
+                        <Route path="/People"
+                        render={() => <People data1={this.state.people} /> } />
+                        <Route path="/Planets" 
+                        render={() => <Planets data2={this.state.planets} />} />
+                        <Route path="/Starships" 
+                        render={() => <Starships data3={this.state.starships} />} />
+                        <Route path="/People/:id" component={<Child />} />
+                    </Switch> 
+                </div>
+            </BrowserRouter>
+        );
+    }
+}
+
 
 
 export default App;

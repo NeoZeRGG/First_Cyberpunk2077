@@ -1,5 +1,4 @@
 body {
-  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -11,3 +10,46 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+header {
+  width: 100%;
+  height: 85px;
+  background-color: #4d66e8;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  text-align: center;
+}
+
+.header-content {
+  position: relative;
+  width: 111px;
+  height: 42px;
+  left: 54px;
+  top: 21px;
+  text-align: center;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 42px;
+
+  color: #FFFFFF;
+}
+
+header a {
+  padding: 100px;
+  text-decoration: none;
+  color: white;
+}
+
+.tab1 {
+  position: relative;
+  width: 247px;
+  height: 200px;
+  padding: 20px;
+  background: #4D9DE8;
+  float: left;
+  margin: 90px 10px;
+  padding:5px
+} 
