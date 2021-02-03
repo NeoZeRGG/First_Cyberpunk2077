@@ -3,7 +3,7 @@ import Header from './components/Header'
 import People from './components/People'
 import Planets from './components/Planets';
 import Starships from './components/Starships';
-import Child from './components/People'
+import Person from './components/Person'
 import {BrowserRouter, Route, Switch} from "react-router-dom"
 
 
@@ -43,17 +43,16 @@ class App extends Component {
     render(){
         return (
             <BrowserRouter>
-            {console.log(this.state)}
                 <div>
                     <Header />
                     <Switch>
-                        <Route path="/People"
+                        <Route exact path="/People"
                         render={() => <People data1={this.state.people} /> } />
                         <Route path="/Planets" 
                         render={() => <Planets data2={this.state.planets} />} />
                         <Route path="/Starships" 
                         render={() => <Starships data3={this.state.starships} />} />
-                        <Route path="/People/:id" component={<Child />} />
+                        <Route path="/People/:id" component={Person} />
                     </Switch> 
                 </div>
             </BrowserRouter>
