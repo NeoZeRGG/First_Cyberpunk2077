@@ -9,41 +9,34 @@ class Person extends React.Component {
   };
 }
 
+
   componentDidMount() {
     const id = this.props.match.params.id;
     fetch(`https://swapi.dev/api/people/${id}`)
     .then(response => response.json())
     .then(data => {
-        this.setState({person : data.results});
+        this.setState({person : data});
     });
   }
 
   
   render() {
-    return (
-        this.state.person.map((person, index) => {
           return (
           <div>
-            <span key={index} className="tab1">
+            <span className="tab1">
               <h2>Person detail information</h2>
-              <p> Name: {person.name}</p>
-              <p>Height: {person.height}</p>
-              <p>Mass: {person.mass}</p>
-              <p>Gender: {person.gender}</p>
-              <p>Hair color: {person.hair_color}</p>
-              <p>Skin color: {person.skin_color}</p>
-              <p>Eye color: {person.eye_color}</p>
-              <p>Birth year: {person.birth_year}</p>
+              <p> Name: {this.state.person.name}</p>
+              <p>Height: {this.state.person.height}</p>
+              <p>Mass: {this.state.person.mass}</p>
+              <p>Gender: {this.state.person.gender}</p>
+              <p>Hair color: {this.state.person.hair_color}</p>
+              <p>Skin color: {this.state.person.skin_color}</p>
+              <p>Eye color: {this.state.person.eye_color}</p>
+              <p>Birth year: {this.state.person.birth_year}</p>
             </span>
         </div>
             )
-          }
-        )
-      )
+          }  
   }
-}
-
-
-
 
 export default Person

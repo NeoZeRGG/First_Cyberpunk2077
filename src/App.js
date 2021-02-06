@@ -19,6 +19,8 @@ class App extends Component {
 }
 
     componentDidMount(){
+        this.setState
+
         fetch("https://swapi.dev/api/people")
         .then(response => response.json())
         .then((data1) => {
