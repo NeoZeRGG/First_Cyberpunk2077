@@ -4,53 +4,49 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding-top: 85px
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  margin: 0 auto;
 }
 
 header {
+  background: url(https://cdn.wallpapersafari.com/38/65/Fcx7LA.jpg) no-repeat;
+  background-size: cover;
+  height: 500px;
   width: 100%;
-  height: 85px;
-  background-color: #4d66e8;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  text-align: center;
 }
 
 .header-content {
-  position: relative;
-  width: 111px;
-  height: 42px;
-  left: 54px;
-  top: 21px;
-  text-align: center;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 36px;
-  line-height: 42px;
-
-  color: #FFFFFF;
+  position: absolute;
+  top: 80px;
+  left: 200px;
 }
 
-header a {
-  padding: 100px;
+.header-link  {
+  padding-bottom: 50px;
+}
+
+.header-link a {
+  font-size: 56px;
   text-decoration: none;
-  color: white;
+  color: whitesmoke;
 }
 
-.tab1 {
-  position: relative;
-  width: 247px;
-  height: 200px;
-  padding: 20px;
-  background: #4D9DE8;
-  float: left;
-  margin: 90px 10px;
-  padding:5px
-} 
+.plate {
+  background: url('https://images.pexels.com/photos/957061/milky-way-starry-sky-night-sky-star-957061.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  background-color: #1e47b8;
+  color: whitesmoke;
+  margin: 2px;
+  padding: 10px 0px;
+  word-wrap: break-word;
+}
+
+.plate a {
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+p {
+  margin: 0;
+}

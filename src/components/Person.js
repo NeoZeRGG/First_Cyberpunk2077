@@ -22,8 +22,7 @@ class Person extends React.Component {
   
   render() {
           return (
-          <div>
-            <span className="tab1">
+          <div className="plate">
               <h2>Person detail information</h2>
               <p> Name: {this.state.person.name}</p>
               <p>Height: {this.state.person.height}</p>
@@ -33,7 +32,6 @@ class Person extends React.Component {
               <p>Skin color: {this.state.person.skin_color}</p>
               <p>Eye color: {this.state.person.eye_color}</p>
               <p>Birth year: {this.state.person.birth_year}</p>
-            </span>
         </div>
             )
           }  

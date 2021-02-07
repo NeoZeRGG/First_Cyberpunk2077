@@ -1,25 +1,38 @@
-import React from "react"
+import React, {Component} from "react"
 import {Link} from 'react-router-dom'
 
 
-function People (props) {
-  return (
-    props.data1.map((person, index) => {
+class People extends Component {
+  constructor(){
+    super();
+    this.state = {
+        people: []
+      }
+    }
+    componentDidMount() {
+
+      fetch("https://swapi.dev/api/people")
+        .then(response => response.json())
+        .then((data) => {
+            this.setState({people: data.results})
+        })
+    }
+
+  render() {
       return (
-      <div>
-        <span key={index} className="tab1">
+      this.state.people.map((person, index) => {
+      return (
+      <div className="plate">
           <Link to={"/People/"+ (index+1)}> Name: {person.name}</Link>
           <p>Height: {person.height}</p>
           <p>Mass: {person.mass}</p>
           <p>Gender: {person.gender}</p>
-        </span>
-    </div>
+      </div>
         )
       }
     )
-  )
+    )
+  }
 }
 
-
-
-export default People
+export default People;
