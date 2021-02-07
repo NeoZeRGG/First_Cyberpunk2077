@@ -12,15 +12,15 @@ class App extends Component {
     constructor(){
         super();
         this.state = {
-            isLoading: false
+            isLoading: true
     }
 }
 
-    // componentDidMount(){
-    //     setTimeout(() => {
-    //         this.setState({isLoading: false})
-    //     }, 5000)
-    // }
+    componentDidMount(){
+        setTimeout(() => {
+            this.setState({isLoading: false})
+        }, 5000)
+    }
 
     
     render(){
